@@ -1,0 +1,57 @@
+body{
+    background-color: rgb(219, 218, 218);
+}
+.botonNav{
+    transition: 2s;
+}
+.logoNav{
+    top: 0%;
+    left: 46%;
+}
+.contenido{
+    width: 95%;
+    background-color: rgb(226, 224, 224);
+}
+.nosotros1{
+    display: grid;   
+    grid-template-columns: repeat(auto-fill, minmax(455px, auto)); 
+    gap: 10px;
+}
+.staff{
+    display: grid;   
+    grid-template-columns: repeat(auto-fill, minmax(20rem, auto)); 
+    gap: 25px;
+    justify-content:space-around;
+}
+.staff2{
+    display: grid;   
+    grid-template-columns: repeat(auto-fill, minmax(7rem, auto)); 
+    gap: 20px;
+    justify-content:center;
+}
+
+.nosotros1Img {
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+}
+
+.nosotros2Img {
+    clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+}
+
+@media screen and (max-width: 991px) {
+    .nosotros1{
+        display: flex;  
+        flex-direction: column;
+        width: 100%;
+    }
+    .nosotrosDivImg{
+        display:none;
+        visibility: hidden;
+    }
+}
+
+.animado{
+    opacity: 0;
+    transition: all 2s;
+}
+
