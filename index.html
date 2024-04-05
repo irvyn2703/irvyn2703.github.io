@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Irvyn xicale cabrera</title>
 </head>
 <body>
@@ -12,40 +12,63 @@
             <img src="https://imgs.search.brave.com/stx3yP-PZFEPHXXeiaDFDdwVaLQgM116bWHMzoVgzM8/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudmV4ZWxzLmNv/bS9tZWRpYS91c2Vy/cy8zLzMyNTk3My9p/c29sYXRlZC9wcmV2/aWV3LzNmMGJiYjI4/NTFmNjdiZThhZWQ3/YjJmODM3MzBlYjUz/LXNpbHVldGEtZGUt/dW5hLXBlcnNvbmEt/c29zdGVuaWVuZG8t/dW4tbWljcmEtZm9u/by5wbmc" alt="">
         </div>
         <div class="nombre">
-            <p>Irvyn Xicale Cabrera</p>
-            <div class="soy">soy <div id="queSoy"> ...|</div></div> 
+            <p id="nombrePrincipal">Irvyn Xicale Cabrera</p>
+            <div class="soy">soy <div id="queSoy"> </div><div class="cursor">|</div></div> 
         </div>
     </header>
-    <nav>
+    <nav id="navegacion" class="ocultar">
         <div class="titulo">
             <div id="menu"><i class="fa-solid fa-bars"></i></div>
-            Irvyn Xicale Cabrera 
+            <div id="contentTit">Irvyn Xicale Cabrera</div> 
         </div>
         <ul>
-            <li class="opciones"><a href="#sobreMi">Sobre Mi<i class="fa-solid fa-user noMostrar"></i></a></li>
-            <li class="opciones"><a href="#habilidades">Habilidades <i class="fa-solid fa-screwdriver-wrench noMostrar"></i></a></li>
-            <li class="opciones"><a href="#formacion">Formación <i class="fa-solid fa-user-graduate noMostrar"></i></a></li>
-            <li class="opciones"><a href="#proyectos">Proyectos <i class="fa-solid fa-code noMostrar"></i></a></li>
-            <li id="Ingles" class="traducir opciones"><a href="">Inglés <i class="fa-solid fa-language noMostrar"></i></a></li>
+            <li class="opciones ocultar"><a href="#sobreMi">Sobre Mi</a></li>
+            <li class="opciones ocultar"><a href="#habilidades">Habilidades</a></li>
+            <li class="opciones ocultar"><a href="#formacion">Formación</a></li>
+            <li class="opciones ocultar"><a href="#proyectos">Proyectos</a></li>
+            <li id="Ingles" class="traducir opciones ocultar"><a href="">Inglés</a></li>
         </ul>
     </nav>
     <div id="sobreMi">
-        <div>
-            <i class="fa-solid fa-location-dot"></i><p>Puebla, México</p>
-            <i class="fa-solid fa-phone"></i><p>2226691915</p>
-            <i class="fa-brands fa-linkedin"></i><p><a href="https://www.linkedin.com/in/irvyn-xicale-cabrera-b627a1300/">irvyn xicale cabrera</a></p>
-            <h5>GitHub:</h5><p><a href="https://github.com/irvyn2703">irvyn2703</a></p>
-            <h5>Inglés:</h5><p>Intermedio</p>
-            <h5>Español:</h5><p>Nativo</p>
-
-        </div>
-        <div>
-            <h2>Sobre mi.</h2>
+        <div class="contenido">
+            <h2>Sobre mi</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit ut molestiae, odio sit dolorum eligendi, aut culpa consequatur esse adipisci perferendis earum enim debitis voluptas sint deserunt provident. Autem, veniam?S</p>
         </div>
+        <div class="datos">
+            <div class="des">
+                <div><i class="fa-solid fa-location-dot"></i></div>
+                <p>Puebla, México</p>
+            </div>
+            <div class="des">
+                <div><i class="fa-solid fa-phone"></i></div>
+                <p>2226691915</p>
+            </div>
+            <div class="des">
+                <div><i class="fa-brands fa-linkedin"></i></div>
+                <p><a href="https://www.linkedin.com/in/irvyn-xicale-cabrera-b627a1300/">irvyn xicale cabrera</a></p>
+            </div>
+            <div class="des">
+                <div><i class="fa-brands fa-github"></i></div>
+                <p><a href="https://github.com/irvyn2703">irvyn2703</a></p>
+            </div>
+            <div class="des">
+                <div><i class="fa-solid fa-envelope"></i></div>
+                <p>irvynxicale@hotmail.com</p>
+            </div>
+            <div class="idiomas">
+                <div>
+                    <h5>Inglés:</h5><p>Intermedio</p>
+                </div>
+                <div>
+                    <h5>Español:</h5><p>Nativo</p>
+                </div>
+            </div>
+
+        </div>
+        
     </div>
     <div id="habilidades">
-        <h2>habilidades de software</h2>
+        <h2>Conocimiento en software</h2>
         <ul>
             <li><i class="fa-solid fa-database"></i>SQL</li>
             <li><i class="fa-solid fa-code"></i>MongoDB</li>
@@ -61,18 +84,24 @@
     </div>
     <div id="formacion">
         <h2>Formación</h2>
-        <div class="fecha">
-            <div>Bachiller</div>
-            <div>2015-2018</div>
+        <div class="educacion">
+            <div class="bachiller">
+                <div class="fecha">
+                    <div>Bachiller</div>
+                    <div>2015-2018</div>
+                </div>
+                <div class="insticucion">Centro de Estudios Tecnológicos industrial y de servicios No.67</div>
+                <div class="descripcion">Egresado como Técnico en Programación.</div>
+            </div>
+            <div class="universidad">
+                <div class="fecha">
+                    <div>2019-presente</div>
+                    <div>Universidad</div>
+                </div>
+                <div class="insticucion">Benemérita Universidad Autónoma de Puebla</div>
+                <div class="descripcion">Licenciatura en Ingeniería en Ciencias de la Computación.</div>
+            </div>
         </div>
-        <div class="insticucion">Centro de Estudios Tecnológicos industrial y de servicios No.67</div>
-        <div class="descripcion">Egresado como Técnico en Programación.</div>
-        <div class="fecha">
-            <div>Universidad</div>
-            <div>2019-presente</div>
-        </div>
-        <div class="insticucion">Benemérita Universidad Autónoma de Puebla</div>
-        <div class="descripcion">Licenciatura en Ingeniería en Ciencias de la Computación.</div>
     </div>
     <div id="proyectos">
         <h2>Proyectos</h2>
@@ -101,6 +130,7 @@
     </div>
 
     <script src="https://kit.fontawesome.com/56442219a6.js" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/soyFrases.js"></script>
 </body>
 </html>
