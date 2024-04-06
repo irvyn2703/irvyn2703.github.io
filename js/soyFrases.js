@@ -1,12 +1,12 @@
 const frases = [
     "Ing. Ciencias de la Computación",
     "Programador en Python",
-    "Frontend",
+    "Desarrollador Frontend",
     "Programador en JavaScript",
-    "Backend",
+    "Desarrollador Backend",
     "Programador en Java",
-    "Diseñador de Bases de datos",
-    "Programador movil",
+    "Diseñador de Bases de Datos",
+    "Programador móvil",
     "Irvyn Xicale Cabrera"
 ];
 
