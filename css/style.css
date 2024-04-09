@@ -10,6 +10,7 @@ body {
     overflow-x: hidden;
     scrollbar-width: none;
     width: 100vw;
+    background-color: #02081d;
 }
 
 header {
@@ -87,6 +88,7 @@ nav {
     padding: 0px 5vw;
     justify-content: space-between;
     align-items: center;
+    z-index: 10;
 }
 
 nav ul li .noMostrar {
@@ -159,6 +161,11 @@ nav ul li a:hover {
 #sobreMi .datos a {
     text-decoration: none;
     color: #FFF;
+    transition: color 0.5s ease-in-out;
+}
+
+#sobreMi .datos a:hover {
+    color: #1cb6ee;
 }
 
 #sobreMi .datos .des{ 

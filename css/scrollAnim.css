@@ -1,0 +1,73 @@
+#sobreMi .contenido{
+    opacity: 0;
+    transform: scaleY(0);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+#sobreMi .contenido.anim {
+    opacity: 1;
+    transform: scaleY(1);
+}
+
+#sobreMi .datos{
+    opacity: 0;
+    transform: scaleX(0);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+#sobreMi .datos.anim {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+.encabezado {
+    opacity: 0;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.encabezado.anim{
+    opacity: 1;
+}
+
+.skills {
+    opacity: 0;
+    transform-origin: top center;
+    transform: rotate3d(1,1,1,-120deg);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.skills.anim{
+    transform: rotate3d(1,1,1,0deg);
+    opacity: 1;
+}
+
+.educacion {
+    transform: rotateX(90deg);
+    opacity: 0;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.educacion.anim{
+    transform: rotateX(0deg);
+    opacity: 1;
+}
+
+.todos {
+    transform: rotateY(90deg);
+    opacity: 0;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.todos.anim{
+    transform: rotateY(0deg);
+    opacity: 1;
+}
+
+#principal {
+    opacity: 0;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+#principal.anim{
+    opacity: 1;
+}
