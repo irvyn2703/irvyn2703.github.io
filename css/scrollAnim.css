@@ -32,12 +32,12 @@
 .skills {
     opacity: 0;
     transform-origin: top center;
-    transform: rotate3d(1,1,1,-120deg);
+    transform: scale(0);
     transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
 
 .skills.anim{
-    transform: rotate3d(1,1,1,0deg);
+    transform: scale(1);
     opacity: 1;
 }
 
