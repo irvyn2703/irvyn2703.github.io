@@ -1,0 +1,156 @@
+.fondo{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    opacity: 0.3;
+    justify-content: center;
+}
+
+.fondo .montaña {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: stretch;
+    align-items: stretch;
+    width: 75%;
+    height: 20%;
+    z-index: 2;
+}
+
+
+.fondo .montaña:nth-child(1) {
+    height: 64%;
+    transform: rotateY(180deg);
+    left: 0;
+}
+.fondo .montaña:nth-child(2) {
+    height: 62%;
+    right: 0;
+}
+.fondo .montaña:nth-child(3) {
+    height: 51%;
+    transform: rotateY(180deg);
+    left: 0;
+}
+.fondo .montaña:nth-child(4) {
+    height: 42%;
+    right: 0;
+}
+.fondo .montaña:nth-child(5) {
+    height: 35%;
+    transform: rotateY(180deg);
+    left: 0;
+}
+.fondo .montaña:nth-child(6) {
+    right: 0;
+}
+
+.fondo .montaña .forma1{
+    clip-path: polygon(73% 40%, 94% 0, 100% 0, 100% 100%, 0 100%, 47% 40%);
+    min-width: 100px;
+    width: 100%;
+    height: 100%;
+}
+
+.fondo .montaña:nth-child(1) > * {
+    background-color: #73ba93;
+}
+.fondo .montaña:nth-child(2) > * {
+    background-color: #39998d;
+}
+.fondo .montaña:nth-child(3) > * {
+    background-color: #007680;
+}
+.fondo .montaña:nth-child(4) > * {
+    background-color: #00555f;
+}
+.fondo .montaña:nth-child(5) > * {
+    background-color: #00495f;
+}
+.fondo .montaña:nth-child(6) > * {
+    background-color: #064456;
+}
+
+.fondo .arbol{
+    width: 50px;
+    height: 150px;
+    position: absolute;
+    bottom: 0px;
+    z-index: 2;
+}
+
+.fondo .arbol .palo{
+    width: 100%;
+    height: 5%;
+    background-color: #007680;
+    clip-path: polygon(45% 0, 55% 0, 55% 100%, 45% 100%);
+}
+.fondo .arbol .triangulo{
+    width: 100%;
+    height: calc(95% / 5);
+    background-color: #007680;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.fondo .arbol .triangulo:nth-child(1){
+    transform: translateY(260%) scale(0.2);
+}
+.fondo .arbol .triangulo:nth-child(2){
+    transform: translateY(180%) scale(0.4);
+}
+.fondo .arbol .triangulo:nth-child(3){
+    transform: translateY(110%) scale(0.6);
+}
+.fondo .arbol .triangulo:nth-child(4){
+    transform: translateY(50%) scale(0.8);
+}
+.fondo .arbol .triangulo:nth-child(5){
+    transform: translateY(0%) scale(1);
+}
+
+.fondo .arbol:nth-last-child(1){
+    left: 30%;
+    bottom: 0px;
+}
+.fondo .arbol:nth-last-child(2){
+    right: 25%;
+    bottom: 37%;
+}
+.fondo .arbol:nth-last-child(3){
+    right: 32%;
+    bottom: 25%;
+}
+.fondo .arbol:nth-last-child(4){
+    left: 25%;
+    bottom: 38.2%;
+}
+
+.fondo .arbol:nth-last-child(5){
+    left: 5%;
+    bottom: 0%;
+}
+
+.fondo .arbol:nth-last-child(2) > *{
+    background-color: #39998d;
+}
+
+.fondo .arbol:nth-last-child(3) > *{
+    background-color: #00555f;
+}
+
+.fondo .arbol:nth-last-child(4) > *{
+    background-color: #73ba93;
+}
+
+.fondo .sol {
+    position: absolute;
+    transform-origin: center;
+    top: 30%;
+    width: 50vw;
+    height: 50vw;
+    background-color: #f5f5f5;
+    border-radius: 100%;
+    z-index: 1;
+    box-shadow: 0 0 50000px 200px rgb(174, 215, 150);
+}
