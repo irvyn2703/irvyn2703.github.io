@@ -11,7 +11,6 @@ const arboles = document.getElementsByClassName('arbol');
 const sol = document.getElementsByClassName('sol');
 const aves = document.getElementsByClassName('ave');
 
-console.log(titulos)
 const observador = new IntersectionObserver(
     entries => {
         entries.forEach(entry => {
