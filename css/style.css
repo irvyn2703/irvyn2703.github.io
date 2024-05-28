@@ -24,6 +24,7 @@ header {
 }
 
 header .imagen {
+    border-radius: 50%;
     width: 20%;
     filter: drop-shadow(0.3vh 0px 0px rgba(28, 182, 238, 1)) drop-shadow(0.5vh 0px 0px rgba(28, 182, 238, 0.8)) drop-shadow(0.7vh 0px 0px rgba(28, 182, 238, 0.6)) drop-shadow(0.9vh 0px 0px rgba(28, 182, 238, 0.4)) drop-shadow(1vh 0px 0px rgba(28, 182, 238, 0.2));
     display: flex;
@@ -293,21 +294,21 @@ nav ul li a:hover {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 25px;
     align-items: center;
 }
 
 #formacion .educacion .bachiller{
-    background-color: rgba(28, 182, 238, 0.2);
+    background-color: rgba(0, 0, 0, 0.5);
     width: 100%;
-    padding: 50px;
+    padding: 20px;
     border-radius: 10px;
 }
 
 .fecha{
     display: flex;
     justify-content: space-between;
-    color: #1cb6ee;
+    color: #FFF;
     font-size: 1.5rem;    
     font-weight: bold;
 }
@@ -315,8 +316,8 @@ nav ul li a:hover {
 #formacion .educacion .bachiller .insticucion{
     text-align: start;
     font-size: 1rem;    
-    color: #FFF;
-    opacity: 0.8;
+    color: #1cb6ee;
+    opacity: 1;
     font-weight: bold;
     margin-bottom: 20px;
 }
@@ -326,17 +327,17 @@ nav ul li a:hover {
 }
 
 #formacion .educacion .universidad{
-    background-color: rgba(28, 182, 238, 0.2);
+    background-color: rgba(0, 0, 0, 0.5);
     width: 100%;
-    padding: 50px;
+    padding: 20px;
     border-radius: 10px;
 }
 
 #formacion .educacion .universidad .insticucion{
     text-align: end;
     font-size: 1rem;    
-    color: #FFF;
-    opacity: 0.8;
+    color: #1cb6ee;
+    opacity: 1;
     font-weight: bold;
     margin-bottom: 20px;
 }
@@ -348,7 +349,6 @@ nav ul li a:hover {
 
 #proyectos {
     width: 100vw;
-    height: 100vh;
     background-color: #02081d;
     display: flex;
     flex-direction: column;
@@ -356,102 +356,91 @@ nav ul li a:hover {
     justify-content: start;
     align-items: center;
     padding: 40px 5vw;
+    margin-bottom: 60px;
 }
 
 #proyectos h2{
     font-size: 2.5rem;
     color: #1cb6ee;
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 
 #proyectos .todos{
     width: 100%;
     height: 100%;
     display: flex;
-    gap: 1vw;
+    flex-wrap: wrap;
+    gap: 25px;
     justify-content: center;
 }
 
 #proyectos .todos .proyecto {
-    width: calc(30% / 4);
-    min-width: 50px;
+    width: 100vw;
+    min-width: 250px;
+    max-width: 550px;
     border-radius: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: width 2s ease-out;
     overflow: hidden;
+    position: relative;
 }
 
-#proyectos .todos .proyecto:hover {
+#proyectos .todos .proyecto img{
     width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    object-position: center;
+    z-index: -1;
 }
 
 #proyectos .todos .proyecto .contenido {
-    display: none;
+    transition: transform 1s ease-out, opacity 0.5s ease-in;
+    opacity: 0;
+    transform: scale(0.5) rotateY(150deg);
     background-color: rgba(0, 0, 0, 0.8);
-    width: 90%;
-    text-align: justify;
+    width: 100%;
     padding: 10px;
     border-radius: 10px;
-}
-
-#proyectos .todos .proyecto .contenido .nombre {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-#proyectos .todos .proyecto .contenido .dependencia {
-    font-size: 1.2rem;
-    opacity: 0.8;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-#proyectos .todos .proyecto .contenido .descripcion ul {
-    list-style-type: none;
-    padding-left: 20px;
+    margin: 4%;
+    padding: 8%;
+    position: relative;
 }
 
 #proyectos .todos .proyecto:hover .contenido {
-    display: inline;
+    opacity: 1;
+    transform: scale(1) rotateY(0deg);
 }
 
-#proyectos .todos .proyecto:nth-child(1) {
-    background-image: url('../img/BioCollector.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+#proyectos .todos .proyecto .contenido .nombre {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #1cb6ee;
 }
 
-#proyectos .todos .proyecto:nth-child(2) {
-    background-image: url('../img/Detector de leucemia.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+#proyectos .todos .proyecto .contenido .dependencia {
+    font-size: 0.8rem;
+    opacity: 0.5;
+    font-weight: bold;
 }
 
-#proyectos .todos .proyecto:nth-child(3) {
-    background-image: url('../img/ControlInteligente.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+#proyectos .todos .proyecto .contenido .descripcion {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    text-align: justify;
 }
 
-#proyectos .todos .proyecto:nth-child(4) {
-    background-image: url('../img/procesamientoDeImagenes.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-#proyectos .todos .proyecto:nth-child(5) {
-    background-image: url('../img/50proyectos.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+#proyectos .todos .proyecto .contenido .fecha {
+    font-size: 1rem;
+    color: #FFF;
+    opacity: 0.9;
+    font-weight: bold;
+    position: absolute;
+    right: 5px;
+    top: 5px;
 }
 
 @keyframes parpadeo {
