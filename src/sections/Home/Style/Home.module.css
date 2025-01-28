@@ -1,0 +1,87 @@
+.home {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mainContainer {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 2rem;
+  margin: 0 5rem;
+  text-align: justify;
+  color: #fff;
+}
+
+.mainContainer h2 {
+  color: #1db6ee;
+  font-size: xx-large;
+}
+
+.mainContainer button {
+  background-color: #1db6ee;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: medium;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  &:hover {
+    background-color: #0f8bba;
+  }
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  & > i {
+    font-size: large;
+    color: #1db6ee;
+  }
+}
+
+.language {
+  text-align: center;
+  background-color: #1db6ee;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  & > p {
+    font-size: large;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  .languageContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    padding-bottom: 0.5rem;
+    & > p {
+      margin: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .mainContainer {
+    grid-template-columns: 1fr;
+    margin: 0 1rem;
+  }
+
+  .icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .containerRigth {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}

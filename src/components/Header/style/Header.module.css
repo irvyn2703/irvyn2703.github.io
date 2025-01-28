@@ -1,6 +1,7 @@
-header {
+.headerStyle {
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
+  top: 0;
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -9,12 +10,12 @@ header {
   overflow: hidden;
 }
 
-h3 {
+.h3Style {
   color: white;
   margin: 0;
 }
 
-ul {
+.ulStyle {
   display: flex;
   list-style: none;
   margin: 0;
@@ -22,7 +23,7 @@ ul {
   gap: 30px;
 }
 
-a {
+.aStyle {
   color: white;
   text-decoration: none;
   font-weight: bold;
@@ -32,7 +33,7 @@ a {
   }
 }
 
-i {
+.iStyle {
   font-size: x-large;
   color: white;
   transition: color 0.3s ease;
@@ -48,7 +49,7 @@ i {
 }
 
 @media screen and (max-width: 768px) {
-  ul {
+  .ulStyle {
     transform: translateX(-100%);
     position: fixed;
     top: 0;
@@ -71,11 +72,11 @@ i {
   .menuOpen {
     transform: translateX(0);
   }
-  li {
+  .liStyle {
     text-align: center;
     width: 100%;
   }
-  a {
+  .aStyle {
     display: block;
     font-size: xx-large;
     width: 100%;
@@ -83,7 +84,7 @@ i {
     transition: background-color 0.5s ease;
     &:hover {
       color: white;
-      background-color: rgba(29, 182, 238, 0.5);
+      background-color: rgba(29, 182, 238, 0.8);
     }
   }
 }

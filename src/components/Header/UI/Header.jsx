@@ -1,34 +1,50 @@
-import "../style/Header.css";
+import React from "react";
+import styles from "../style/Header.module.css";
 import HeaderBusiness from "../business/HeaderBusiness";
 
 const Header = () => {
   const { isMenuOpen, toggleMenu } = HeaderBusiness();
   return (
-    <header>
-      <div className="bars activatedButton">
+    <header className={styles.headerStyle}>
+      <div className={`${styles.bars} ${styles.activatedButton}`}>
         {isMenuOpen ? (
-          <i class="fa-solid fa-xmark" onClick={toggleMenu}></i>
+          <i
+            className={`fa-solid fa-xmark ${styles.iStyle}`}
+            onClick={toggleMenu}
+          ></i>
         ) : (
-          <i class="fa-solid fa-bars" onClick={toggleMenu}></i>
+          <i
+            className={`fa-solid fa-bars ${styles.iStyle}`}
+            onClick={toggleMenu}
+          ></i>
         )}
       </div>
-      <h3>Irvyn Xicale Cabrera</h3>
+      <h3 className={styles.h3Style}>Irvyn Xicale Cabrera</h3>
       <nav>
-        <ul className={isMenuOpen ? "menuOpen" : ""}>
-          <li>
-            <a href="#home">Inicio</a>
+        <ul
+          className={
+            isMenuOpen ? `${styles.ulStyle} ${styles.menuOpen}` : styles.ulStyle
+          }
+        >
+          <li className={styles.liStyle}>
+            <a href="#home" className={styles.aStyle}>
+              Sobre mi
+            </a>
           </li>
-          <li>
-            <a href="#aboutMe">Sobre mi</a>
+          <li className={styles.liStyle}>
+            <a href="#skills" className={styles.aStyle}>
+              Habilidades
+            </a>
           </li>
-          <li>
-            <a href="#skills">Habilidades</a>
+          <li className={styles.liStyle}>
+            <a href="#education" className={styles.aStyle}>
+              Formación
+            </a>
           </li>
-          <li>
-            <a href="#education">Formación</a>
-          </li>
-          <li>
-            <a href="#proyects">Proyectos</a>
+          <li className={styles.liStyle}>
+            <a href="#proyects" className={styles.aStyle}>
+              Proyectos
+            </a>
           </li>
         </ul>
       </nav>
