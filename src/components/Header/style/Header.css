@@ -1,0 +1,91 @@
+header {
+  background-color: black;
+  position: fixed;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  overflow: hidden;
+}
+
+h3 {
+  color: white;
+  margin: 0;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 30px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  &:hover {
+    color: #1db6ee;
+  }
+}
+
+i {
+  font-size: x-large;
+  color: white;
+  transition: color 0.3s ease;
+  &:hover {
+    color: #1db6ee;
+    cursor: pointer;
+  }
+}
+
+.bars {
+  display: none;
+  transition: transform 0.5s ease;
+}
+
+@media screen and (max-width: 768px) {
+  ul {
+    display: none;
+  }
+  .bars {
+    display: block;
+  }
+  .menuOpen {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 100%;
+    transition: transform 0.5s ease;
+    z-index: -1;
+  }
+  .menuOpen ul {
+    display: block;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+  }
+  li {
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    font-size: xx-large;
+    transition: background-color 0.5s ease;
+    &:hover {
+      background-color: #1db6ee;
+      padding: 15px;
+    }
+  }
+  a:hover {
+    color: white;
+  }
+}
