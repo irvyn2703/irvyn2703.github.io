@@ -1,0 +1,35 @@
+.skill {
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-size: x-large;
+  cursor: default;
+}
+
+.skill i {
+  font-size: 7rem;
+  color: #f8f9fa;
+  transition: transform 0.8s, text-shadow 0.3s ease-in-out;
+}
+
+.skill:hover i {
+  text-shadow: 0 0 50px #1db6ee;
+  transform: scale(1.2) rotateY(360deg);
+}
+
+@media screen and (max-width: 768px) {
+  .skill {
+    margin: 0.5rem;
+  }
+
+  .skill i {
+    font-size: 3rem;
+  }
+
+  .skill span {
+    display: none;
+  }
+}
