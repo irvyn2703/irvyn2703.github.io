@@ -13,8 +13,8 @@ const Header = () => {
         )}
       </div>
       <h3>Irvyn Xicale Cabrera</h3>
-      <nav className={isMenuOpen ? "menuOpen" : ""}>
-        <ul>
+      <nav>
+        <ul className={isMenuOpen ? "menuOpen" : ""}>
           <li>
             <a href="#home">Inicio</a>
           </li>

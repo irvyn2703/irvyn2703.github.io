@@ -1,5 +1,5 @@
 header {
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
   display: flex;
   width: 100%;
@@ -49,43 +49,41 @@ i {
 
 @media screen and (max-width: 768px) {
   ul {
-    display: none;
-  }
-  .bars {
-    display: block;
-  }
-  .menuOpen {
-    background-color: rgba(0, 0, 0, 0.5);
+    transform: translateX(-100%);
     position: fixed;
     top: 0;
     right: 0;
-    height: 100vh;
-    width: 100%;
-    transition: transform 0.5s ease;
-    z-index: -1;
-  }
-  .menuOpen ul {
-    display: block;
     width: 100%;
     height: 100%;
+    z-index: -1;
+    display: block;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: transform 0.5s ease;
+  }
+  .bars {
+    display: block;
+  }
+  .menuOpen {
+    transform: translateX(0);
   }
   li {
     text-align: center;
     width: 100%;
-    padding: 10px;
+  }
+  a {
+    display: block;
     font-size: xx-large;
+    width: 100%;
+    padding: 10px 0;
     transition: background-color 0.5s ease;
     &:hover {
-      background-color: #1db6ee;
-      padding: 15px;
+      color: white;
+      background-color: rgba(29, 182, 238, 0.5);
     }
-  }
-  a:hover {
-    color: white;
   }
 }
