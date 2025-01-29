@@ -5,11 +5,14 @@ import Skills from "./sections/Skills/UI/Skills";
 import Education from "./sections/Education/UI/Education";
 import useEducationAndProjects from "./hooks/useEducationAndProjects";
 import Proyects from "./sections/Proyects/UI/Proyects";
+import Trees from "./components/Trees/UI/Trees";
+import Montains from "./components/Mountains/UI/Mountains";
+import Sun from "./components/Sun/UI/Sun";
 
 function App() {
   const { education, proyects, isLoading } = useEducationAndProjects();
   return (
-    <div>
+    <>
       <Header />
       <Home />
       <Skills />
@@ -19,7 +22,12 @@ function App() {
           <Proyects proyects={proyects} />
         </>
       )}
-    </div>
+      <div className="fondo">
+        <Trees />
+        <Montains />
+        <Sun />
+      </div>
+    </>
   );
 }
 
