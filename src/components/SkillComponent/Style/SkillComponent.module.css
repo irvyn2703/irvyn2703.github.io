@@ -1,16 +1,16 @@
 .skill {
-  margin: 2rem;
+  margin: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  font-size: x-large;
+  font-size: large;
   cursor: default;
 }
 
 .skill i {
-  font-size: 7rem;
+  font-size: 4rem;
   color: #f8f9fa;
   transition: transform 0.8s, text-shadow 0.3s ease-in-out;
 }
@@ -21,10 +21,6 @@
 }
 
 @media screen and (max-width: 768px) {
-  .skill {
-    margin: 0.5rem;
-  }
-
   .skill i {
     font-size: 3rem;
   }

@@ -8,9 +8,8 @@ const Skills = () => {
     <div id="skills" className={styles.skills}>
       <h2>Habilidades</h2>
       <div className={styles.container}>
-        {skills.map((skill) => {
-          console.log(skill);
-          return <SkillComponent skill={skill} />;
+        {skills.map((skill, index) => {
+          return <SkillComponent skill={skill} key={index} />;
         })}
       </div>
     </div>

@@ -1,0 +1,58 @@
+.container {
+  width: 100%;
+  min-width: 150px;
+  background-color: rgba(29, 182, 238, 0.3);
+  max-height: 40vh;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin: 0 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: justify;
+  gap: 1rem;
+}
+
+.divition {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.date {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #1db6ee;
+}
+
+@media (max-width: 768px) {
+  .container {
+    text-align: center;
+  }
+  .divition {
+    flex-direction: column;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .date {
+    font-size: 0.8rem;
+    opacity: 0.8;
+  }
+
+  .subtitle {
+    font-size: 0.8rem;
+  }
+}
