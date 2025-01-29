@@ -1,0 +1,70 @@
+.bird {
+  position: absolute;
+  transform-origin: center center;
+  clip-path: polygon(
+    34% 35%,
+    50% 48%,
+    66% 35%,
+    87% 48%,
+    66% 40%,
+    50% 52%,
+    34% 40%,
+    13% 48%
+  );
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  background-color: #00495f;
+  width: 15vw;
+  height: 15vw;
+  z-index: 2;
+  animation: birdAnimation 8s forwards, birdFlap 1s infinite;
+}
+
+@keyframes birdAnimation {
+  0% {
+    transform: scale(10) translate(-50%, -50%);
+  }
+  100% {
+    transform: scale(1) translate(-50%, -50%);
+  }
+}
+
+@keyframes birdFlap {
+  0% {
+    clip-path: polygon(
+      37% 61%,
+      50% 48%,
+      60% 60%,
+      76% 69%,
+      58% 63%,
+      50% 52%,
+      38% 63%,
+      20% 68%
+    );
+  }
+  50% {
+    clip-path: polygon(
+      34% 35%,
+      50% 48%,
+      66% 35%,
+      87% 48%,
+      66% 40%,
+      50% 52%,
+      34% 40%,
+      13% 48%
+    );
+  }
+  100% {
+    clip-path: polygon(
+      37% 61%,
+      50% 48%,
+      60% 60%,
+      76% 69%,
+      58% 63%,
+      50% 52%,
+      38% 63%,
+      20% 68%
+    );
+  }
+}

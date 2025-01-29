@@ -8,6 +8,7 @@ import Proyects from "./sections/Proyects/UI/Proyects";
 import Trees from "./components/Trees/UI/Trees";
 import Montains from "./components/Mountains/UI/Mountains";
 import Sun from "./components/Sun/UI/Sun";
+import Bird from "./components/Bird/UI/Bird";
 
 function App() {
   const { education, proyects, isLoading } = useEducationAndProjects();
@@ -26,6 +27,7 @@ function App() {
         <Trees />
         <Montains />
         <Sun />
+        <Bird />
       </div>
     </>
   );

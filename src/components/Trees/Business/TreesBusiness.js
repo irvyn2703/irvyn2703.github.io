@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 
 const TreesBusiness = () => {
-  const numTrees = 15;
+  const numTrees = 25;
   const [positionTrees, setPositionTrees] = useState([]);
 
   const getRandomNumber = () => {
-    return Math.floor(Math.random() * 91);
+    return Math.floor(Math.random() * 98);
   };
 
   useEffect(() => {
