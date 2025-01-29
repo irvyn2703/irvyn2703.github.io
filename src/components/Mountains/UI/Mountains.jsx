@@ -11,6 +11,7 @@ const Montains = () => {
           rotated={detail.rotated}
           height={detail.height}
           color={detail.color}
+          delay={detail.delay}
         />
       ))}
     </>
