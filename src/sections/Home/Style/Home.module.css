@@ -35,10 +35,12 @@
   }
 }
 
-.icon {
+.icon a {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  text-decoration: none;
+  color: white;
   & > i {
     font-size: large;
     color: #1db6ee;

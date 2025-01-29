@@ -10,6 +10,7 @@ import Montains from "./components/Mountains/UI/Mountains";
 import Sun from "./components/Sun/UI/Sun";
 import Bird from "./components/Bird/UI/Bird";
 import useScrollToFalseScreen from "./hooks/useScrollToFalseScreen";
+import Footer from "./components/Footer/UI/Footer";
 
 function App() {
   const { education, proyects, isLoading } = useEducationAndProjects();
@@ -26,6 +27,7 @@ function App() {
           <Proyects proyects={proyects} />
         </>
       )}
+      <Footer />
       <div className="fondo">
         <Trees />
         <Montains />

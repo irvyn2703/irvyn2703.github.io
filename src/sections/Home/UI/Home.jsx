@@ -23,8 +23,10 @@ const Home = () => {
           <div className={styles.icons}>
             {data.map((element, index) => (
               <div key={index} className={styles.icon}>
-                <i className={`${element.icon}`}></i>
-                <p>{element.text}</p>
+                <a href={element.href}>
+                  <i className={`${element.icon}`}></i>
+                  <p>{element.text}</p>
+                </a>
               </div>
             ))}
           </div>
