@@ -1,12 +1,22 @@
 import styles from "../Style/Cards.module.css";
 
-const Cards = ({ education }) => {
-  const { Titulo, subtitulo, Fecha, Imagen, Descripcion } = education;
-  console.log(education);
+const Cards = ({ item }) => {
+  const {
+    Titulo = "",
+    subtitulo = "",
+    Fecha = "",
+    Imagen = "",
+    Descripcion = "",
+  } = item;
   return (
     <div
       className={styles.container}
-      style={{ backgroundImage: `url(${Imagen})` }}
+      style={{
+        backgroundImage: `url(assets/${Imagen})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        maxHeight: "70vh",
+      }}
     >
       <div className={styles.divition}>
         <div className={styles.title}>{Titulo}</div>

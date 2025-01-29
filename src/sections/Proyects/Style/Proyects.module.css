@@ -1,0 +1,30 @@
+.container {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  gap: 1rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.proyects {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  color: white;
+}
+
+.containerButtons {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  margin: auto;
+  top: 50%;
+  transform: translateY(-50%);
+}
