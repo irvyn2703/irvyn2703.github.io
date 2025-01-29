@@ -9,11 +9,14 @@ import Trees from "./components/Trees/UI/Trees";
 import Montains from "./components/Mountains/UI/Mountains";
 import Sun from "./components/Sun/UI/Sun";
 import Bird from "./components/Bird/UI/Bird";
+import useScrollToFalseScreen from "./hooks/useScrollToFalseScreen";
 
 function App() {
   const { education, proyects, isLoading } = useEducationAndProjects();
+  useScrollToFalseScreen();
   return (
     <>
+      <div className="falseScreen"></div>
       <Header />
       <Home />
       <Skills />

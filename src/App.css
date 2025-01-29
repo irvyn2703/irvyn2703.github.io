@@ -1,8 +1,21 @@
 .fondo {
-  opacity: 0.3;
+  opacity: 0.35;
   position: fixed;
   width: 100vw;
   height: 100vh;
   top: 0;
   z-index: -1;
+}
+
+.falseScreen {
+  width: 100%;
+  height: 100vh;
+  animation: hiddenScreen 0.5s forwards ease-out;
+  animation-delay: 3s;
+}
+
+@keyframes hiddenScreen {
+  to {
+    height: 0vh;
+  }
 }

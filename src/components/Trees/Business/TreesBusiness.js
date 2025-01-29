@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 const TreesBusiness = () => {
-  const numTrees = 25;
+  const numTrees = 15;
   const [positionTrees, setPositionTrees] = useState([]);
 
   const getRandomNumber = () => {
