@@ -49,6 +49,9 @@
 }
 
 @media screen and (max-width: 768px) {
+  .headerStyle {
+    z-index: 1;
+  }
   .ulStyle {
     transform: translateX(-100%);
     position: fixed;
@@ -63,7 +66,7 @@
     justify-content: center;
     align-items: center;
     gap: 40px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
     transition: transform 0.5s ease;
   }
   .bars {

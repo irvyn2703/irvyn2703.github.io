@@ -10,6 +10,7 @@ const Footer = () => {
         <a
           href="https://www.linkedin.com/in/irvyn-xicale-cabrera-b627a1300"
           target="_blank"
+          rel="noreferrer"
         >
           <i className="fab fa-linkedin-in"></i>
         </a>
@@ -27,18 +28,14 @@ const Footer = () => {
       </div>
       <div className={styles.icons}>
         <span>---</span>
-        <a>
-          <i
-            className="fas fa-phone"
-            onClick={() => handleCopy("2226691915")}
-          ></i>
-        </a>
-        <a>
-          <i
-            className="fas fa-envelope"
-            onClick={() => handleCopy("irvynxicale@hotmail.com")}
-          ></i>
-        </a>
+        <i
+          className="fas fa-phone"
+          onClick={() => handleCopy("2226691915")}
+        ></i>
+        <i
+          className="fas fa-envelope"
+          onClick={() => handleCopy("irvynxicale@hotmail.com")}
+        ></i>
       </div>
     </footer>
   );
