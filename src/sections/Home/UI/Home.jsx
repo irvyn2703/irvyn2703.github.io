@@ -23,7 +23,11 @@ const Home = () => {
           <div className={styles.icons}>
             {data.map((element, index) => (
               <div key={index} className={styles.icon}>
-                <a href={element.href}>
+                <a
+                  href={element.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <i className={`${element.icon}`}></i>
                   <p>{element.text}</p>
                 </a>
