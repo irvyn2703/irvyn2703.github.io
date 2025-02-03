@@ -10,7 +10,6 @@ const EducationBusiness = () => {
         const response = await EducationRepository.getEducationByLanguage({
           english: false,
         });
-        console.log({ response });
         setEducation(response);
       } catch (error) {
         console.log(error);

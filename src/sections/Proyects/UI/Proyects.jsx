@@ -3,15 +3,13 @@ import Cards from "../../../components/Cards/UI/Cards";
 import ProyectBusiness from "../Business/ProyectsBusiness";
 import styles from "../Style/Proyects.module.css";
 
-const Proyects = ({ proyects }) => {
-  const { proyect, handledClickLeft, handledClickRight } = ProyectBusiness({
-    proyects,
-  });
+const Proyects = () => {
+  const { proyect, handledClickLeft, handledClickRight } = ProyectBusiness();
   return (
     <section className={styles.proyects} id="proyects">
       <h2>Proyectos</h2>
       <div className={styles.container}>
-        <Cards item={proyect} />
+        <Cards Type={proyect} />
         <div className={styles.containerButtons}>
           <ButtonIcon
             icon="fa-solid fa-chevron-left"
