@@ -3,8 +3,10 @@ import Cards from "../../../components/Cards/UI/Cards";
 import ProyectBusiness from "../Business/ProyectsBusiness";
 import styles from "../Style/Proyects.module.css";
 
-const Proyects = () => {
-  const { proyect, handledClickLeft, handledClickRight } = ProyectBusiness();
+const Proyects = ({ english }) => {
+  const { proyect, handledClickLeft, handledClickRight } = ProyectBusiness({
+    english,
+  });
   return (
     <section className={styles.proyects} id="proyects">
       <h2>Proyectos</h2>

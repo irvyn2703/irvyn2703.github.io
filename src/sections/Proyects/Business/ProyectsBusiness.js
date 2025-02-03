@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import ProjectsRepository from "../../../repositories/ProjectsRepository";
 
-const ProyectBusiness = () => {
+const ProyectBusiness = ({ english }) => {
   const [position, setPosition] = useState(0);
   const [numProyects, setNumProyects] = useState(0);
   const [proyect, setProyect] = useState([]);
@@ -11,7 +11,7 @@ const ProyectBusiness = () => {
     const fetchData = async () => {
       try {
         const response = await ProjectsRepository.getProjectsByLanguage({
-          english: true,
+          english,
         });
         setProyect(response[0]);
         setProyects(response);

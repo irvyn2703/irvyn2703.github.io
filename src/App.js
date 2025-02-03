@@ -9,17 +9,19 @@ import Montains from "./components/Mountains/UI/Mountains";
 import Sun from "./components/Sun/UI/Sun";
 import Bird from "./components/Bird/UI/Bird";
 import useScrollToFalseScreen from "./hooks/useScrollToFalseScreen";
+import useLanguage from "./hooks/useLanguage";
 
 function App() {
   useScrollToFalseScreen();
+  const { isEnglish, toggleLanguage } = useLanguage();
   return (
     <>
       <div className="falseScreen"></div>
       <Header />
       <Home />
       <Skills />
-      <Education />
-      <Proyects />
+      <Education english={isEnglish} />
+      <Proyects english={isEnglish} />
       <div className="fondo">
         <Trees />
         <Montains />

@@ -2,8 +2,8 @@ import Cards from "../../../components/Cards/UI/Cards";
 import EducationBusiness from "../Business/EducationBusiness";
 import styles from "../Style/Education.module.css";
 
-const Education = () => {
-  const { education } = EducationBusiness();
+const Education = ({ english }) => {
+  const { education } = EducationBusiness({ english });
 
   return (
     <div id="education" className={styles.education}>

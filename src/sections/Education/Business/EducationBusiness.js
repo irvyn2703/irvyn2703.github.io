@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import EducationRepository from "../../../repositories/EducationRepository";
 
-const EducationBusiness = () => {
+const EducationBusiness = ({ english }) => {
   const [education, setEducation] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await EducationRepository.getEducationByLanguage({
-          english: false,
+          english,
         });
         setEducation(response);
       } catch (error) {
