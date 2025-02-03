@@ -42,7 +42,7 @@ const Header = () => {
             </a>
           </li>
           <li className={styles.liStyle}>
-            <a href="#proyects" className={styles.aStyle}>
+            <a href="#projects" className={styles.aStyle}>
               Proyectos
             </a>
           </li>

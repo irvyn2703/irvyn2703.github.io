@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import ProjectsRepository from "../../../repositories/ProjectsRepository";
 
-const ProyectBusiness = ({ english }) => {
+const ProjectsBusiness = ({ english }) => {
   const [position, setPosition] = useState(0);
-  const [numProyects, setNumProyects] = useState(0);
-  const [proyect, setProyect] = useState([]);
-  const [proyects, setProyects] = useState([]);
+  const [numProjects, setNumProjects] = useState(0);
+  const [project, setProject] = useState([]);
+  const [projects, setProjects] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -13,9 +13,9 @@ const ProyectBusiness = ({ english }) => {
         const response = await ProjectsRepository.getProjectsByLanguage({
           english,
         });
-        setProyect(response[0]);
-        setProyects(response);
-        setNumProyects(response.length);
+        setProject(response[0]);
+        setProjects(response);
+        setNumProjects(response.length);
       } catch (error) {
         console.log(error);
       }
@@ -27,18 +27,18 @@ const ProyectBusiness = ({ english }) => {
   const handledClickLeft = () => {
     if (position - 1 >= 0) {
       setPosition(position - 1);
-      setProyect(proyects[position - 1]);
+      setProject(projects[position - 1]);
     }
   };
 
   const handledClickRight = () => {
-    if (position + 1 < numProyects) {
+    if (position + 1 < numProjects) {
       setPosition(position + 1);
-      setProyect(proyects[position + 1]);
+      setProject(projects[position + 1]);
     }
   };
 
-  return { proyect, handledClickLeft, handledClickRight };
+  return { project, handledClickLeft, handledClickRight };
 };
 
-export default ProyectBusiness;
+export default ProjectsBusiness;

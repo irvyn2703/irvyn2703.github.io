@@ -1,17 +1,17 @@
 import ButtonIcon from "../../../components/ButtonIcon/UI/ButtonIcon";
 import Cards from "../../../components/Cards/UI/Cards";
-import ProyectBusiness from "../Business/ProyectsBusiness";
-import styles from "../Style/Proyects.module.css";
+import ProjectsBusiness from "../Business/ProjectsBusiness";
+import styles from "../Style/Projects.module.css";
 
-const Proyects = ({ english }) => {
-  const { proyect, handledClickLeft, handledClickRight } = ProyectBusiness({
+const Projects = ({ english }) => {
+  const { project, handledClickLeft, handledClickRight } = ProjectsBusiness({
     english,
   });
   return (
-    <section className={styles.proyects} id="proyects">
+    <section className={styles.projects} id="projects">
       <h2>Proyectos</h2>
       <div className={styles.container}>
-        <Cards Type={proyect} />
+        <Cards Type={project} />
         <div className={styles.containerButtons}>
           <ButtonIcon
             icon="fa-solid fa-chevron-left"
@@ -27,4 +27,4 @@ const Proyects = ({ english }) => {
   );
 };
 
-export default Proyects;
+export default Projects;
