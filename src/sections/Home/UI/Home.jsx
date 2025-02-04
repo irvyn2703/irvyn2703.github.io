@@ -29,8 +29,8 @@ const Home = () => {
                   rel="noopener noreferrer"
                 >
                   <i className={`${element.icon}`}></i>
-                  <p>{element.text}</p>
                 </a>
+                <p>{element.text}</p>
               </div>
             ))}
           </div>

@@ -1,7 +1,10 @@
 const HomeBusiness = () => {
   const data = [
     { icon: "fa-solid fa-location-dot", text: "Puebla, México." },
-    { icon: "fa-solid fa-phone", text: "+52 2226691915" },
+    {
+      icon: "fa-solid fa-phone",
+      text: "+52 2226691915",
+    },
     {
       icon: "fa-brands fa-linkedin",
       text: "Irvyn Xicale Cabrera",
@@ -12,7 +15,11 @@ const HomeBusiness = () => {
       text: "irvyn2703",
       href: "https://github.com/irvyn2703",
     },
-    { icon: "fa-solid fa-envelope", text: "irvynxicale@hotmail.com" },
+    {
+      icon: "fa-solid fa-envelope",
+      text: "irvynxicale@hotmail.com",
+      href: "mailto:irvynxicale@hotmail.com",
+    },
   ];
 
   const handleClicked = () => {

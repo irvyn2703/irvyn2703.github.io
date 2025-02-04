@@ -35,10 +35,13 @@
   }
 }
 
-.icon a {
+.icon {
   display: flex;
-  align-items: center;
   gap: 0.5rem;
+  align-items: center;
+}
+
+.icon a {
   text-decoration: none;
   color: white;
   & > i {
