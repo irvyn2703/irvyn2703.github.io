@@ -14,7 +14,7 @@ const Home = () => {
             y automaticen procesos, con experiencia en el desarrollo de
             soluciones web y móviles dinámicas, escalables y centradas en el
             usuario. Manejo tecnologías modernas como React, React Native,
-            Node.js y Java, y disfruto resolver problemas, innovar y mejorar
+            Node.js y disfruto resolver problemas, innovar y mejorar
             continuamente mis habilidades.
           </p>
           <button onClick={handleClicked}>Descargar CV</button>
