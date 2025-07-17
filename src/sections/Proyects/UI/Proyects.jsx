@@ -33,7 +33,7 @@ const Proyects = ({ proyects }) => {
           navigation
           pagination={{ clickable: true }}
           loop={true}
-          autoplay={{ delay: 5000, disableOnInteraction: false }}
+          autoplay={{ delay: 10000, disableOnInteraction: false }}
           className="mySwiper"
         >
           {proyects.map((proyect, index) => (

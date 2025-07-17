@@ -6,6 +6,7 @@
   "dependencies": {
     "cra-template": "1.2.0",
     "eslint": "^8.57.1",
+    "framer-motion": "^12.23.6",
     "moti": "^0.30.0",
     "my-portfolio": "file:",
     "react": "^19.0.0",

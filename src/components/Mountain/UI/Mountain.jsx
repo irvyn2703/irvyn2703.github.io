@@ -1,16 +1,24 @@
+import { motion } from "framer-motion";
 import styles from "../Style/Mountain.module.css";
 
 const Montain = ({ rotated, height, color, delay }) => {
   return (
-    <div
+    <motion.div
       className={styles.mountain}
-      style={{ height: height, animationDelay: delay }}
+      initial={{ translateX: rotated ? window.innerWidth : -window.innerWidth }}
+      animate={{ translateX: 0 }}
+      transition={{
+        duration: 1,
+        ease: "easeInOut",
+        delay: parseFloat(delay) || 0,
+      }}
+      style={{ height }}
     >
       <div
         className={rotated ? styles.form1 : styles.form2}
         style={{ backgroundColor: color }}
       ></div>
-    </div>
+    </motion.div>
   );
 };
 

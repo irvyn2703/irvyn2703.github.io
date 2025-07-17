@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .fondo {
   opacity: 0.35;
   position: fixed;
