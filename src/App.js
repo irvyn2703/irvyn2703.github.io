@@ -12,7 +12,7 @@ import Bird from "./components/Bird/UI/Bird";
 import useScrollToFalseScreen from "./hooks/useScrollToFalseScreen";
 
 function App() {
-  const { education, proyects, isLoading } = useEducationAndProjects();
+  const { education, projects, isLoading } = useEducationAndProjects();
   useScrollToFalseScreen();
   return (
     <>
@@ -23,7 +23,7 @@ function App() {
       {!isLoading && (
         <>
           <Education education={education} />
-          <Proyects proyects={proyects} />
+          <Proyects proyects={projects} />
         </>
       )}
       <div className="fondo">
