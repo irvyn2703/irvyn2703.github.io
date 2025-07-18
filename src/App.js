@@ -9,20 +9,33 @@ import Trees from "./components/Trees/UI/Trees";
 import Montains from "./components/Mountains/UI/Mountains";
 import Sun from "./components/Sun/UI/Sun";
 import Bird from "./components/Bird/UI/Bird";
+import { motion } from "framer-motion";
 
 function App() {
   const { education, projects, isLoading } = useEducationAndProjects();
   return (
     <>
       <Header />
-      <Home />
-      <Skills />
-      {!isLoading && (
-        <>
-          <Education education={education} />
-          <Proyects proyects={projects} />
-        </>
-      )}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{
+          opacity: 1,
+        }}
+        transition={{
+          duration: 4,
+          ease: "easeIn",
+          delay: 1,
+        }}
+      >
+        <Home />
+        <Skills />
+        {!isLoading && (
+          <>
+            <Education education={education} />
+            <Proyects proyects={projects} />
+          </>
+        )}
+      </motion.div>
       <div className="fondo">
         <Trees />
         <Montains />
