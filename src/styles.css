@@ -760,10 +760,34 @@
       transform 420ms cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 
+  .skill-glyph img {
+    width: 52%;
+    height: 52%;
+    object-fit: contain;
+    filter: saturate(0.82) brightness(1.08);
+    transition:
+      filter 280ms ease,
+      transform 420ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .skill-glyph-pair {
+    gap: 0.18rem;
+  }
+
+  .skill-glyph-pair img {
+    width: 35%;
+    height: 42%;
+  }
+
   .skill-item:hover .skill-glyph {
     color: var(--ink);
     border-color: rgb(6 20 27 / 24%);
     transform: translateZ(45px) rotateY(360deg);
+  }
+
+  .skill-item:hover .skill-glyph img {
+    filter: saturate(1) brightness(0.92);
+    transform: scale(1.08);
   }
 
   .skill-item h3 {
