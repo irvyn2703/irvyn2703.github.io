@@ -933,6 +933,7 @@
     overflow-x: auto;
     overscroll-behavior-inline: contain;
     scroll-behavior: smooth;
+    scroll-padding-inline: var(--page-gutter);
     scroll-snap-type: inline mandatory;
     scrollbar-width: none;
     perspective: 1300px;
@@ -951,6 +952,7 @@
     border: 1px solid var(--line);
     border-radius: var(--radius);
     scroll-snap-align: center;
+    scroll-snap-stop: always;
     transform-origin: center;
   }
 
@@ -1441,7 +1443,7 @@
     }
 
     .hero-title {
-      font-size: clamp(3.6rem, 18vw, 6.4rem);
+      font-size: clamp(3.15rem, 16.5vw, 6rem);
       line-height: 0.84;
     }
 
@@ -1529,14 +1531,36 @@
 
     .project-track {
       grid-auto-columns: calc(100vw - (var(--page-gutter) * 2));
+      gap: 0.9rem;
+      padding-bottom: 1.5rem;
+    }
+
+    .project-card {
+      align-self: start;
+      min-height: 0;
     }
 
     .project-visual {
-      min-height: 18rem;
+      min-height: clamp(13rem, 58vw, 16rem);
     }
 
     .project-body {
-      min-height: 23rem;
+      min-height: 0;
+      padding: 1.5rem;
+    }
+
+    .project-body h3 {
+      margin: 0.65rem 0 1rem;
+      font-size: clamp(2rem, 11vw, 3rem);
+    }
+
+    .project-body ul {
+      margin-top: 1.5rem;
+    }
+
+    .project-links {
+      gap: 1rem 1.25rem;
+      margin-top: 1.25rem;
     }
 
     .contact {

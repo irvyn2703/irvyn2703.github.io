@@ -117,10 +117,14 @@ function getClosestProjectIndex() {
 
 function scrollToProject(index) {
   const normalized = (index + projects.length) % projects.length;
-  projects[normalized].scrollIntoView({
+  const project = projects[normalized];
+  const left =
+    project.offsetLeft -
+    (projectTrack.clientWidth - project.clientWidth) / 2;
+
+  projectTrack.scrollTo({
+    left,
     behavior: reducedMotion.matches ? "auto" : "smooth",
-    block: "nearest",
-    inline: "center",
   });
 }
 

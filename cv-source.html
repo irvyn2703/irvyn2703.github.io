@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CV · Irvyn Xicale Cabrera</title>
+    <style>
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: #10242d;
+        background: #dfe8e5;
+        font-family:
+          Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .page {
+        width: 210mm;
+        min-height: 297mm;
+        margin: 12mm auto;
+        padding: 11mm 13mm 10mm;
+        background: #fff;
+        box-shadow: 0 12px 40px rgb(16 36 45 / 14%);
+      }
+
+      header {
+        padding-bottom: 5mm;
+        border-bottom: 1.5px solid #10242d;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 27pt;
+        font-weight: 750;
+        line-height: 1;
+        letter-spacing: -0.045em;
+      }
+
+      .role {
+        margin: 2.2mm 0 3mm;
+        color: #246d59;
+        font-size: 11pt;
+        font-weight: 650;
+      }
+
+      .contact {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.2mm 4mm;
+        margin: 0;
+        color: #53656d;
+        font-size: 8.3pt;
+      }
+
+      .contact a {
+        border-bottom: 1px solid #b6c8c2;
+      }
+
+      .summary {
+        margin: 5mm 0;
+        padding: 3.5mm 4mm;
+        background: #eff8f4;
+        border-left: 3px solid #55b994;
+      }
+
+      .summary p {
+        margin: 0;
+        font-size: 9.2pt;
+        line-height: 1.45;
+      }
+
+      .layout {
+        display: grid;
+        grid-template-columns: minmax(0, 2.15fr) minmax(0, 0.85fr);
+        gap: 8mm;
+      }
+
+      section + section {
+        margin-top: 5mm;
+      }
+
+      h2 {
+        margin: 0 0 3mm;
+        padding-bottom: 1.2mm;
+        color: #246d59;
+        border-bottom: 1px solid #cbdad5;
+        font-size: 8.6pt;
+        font-weight: 750;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .entry + .entry {
+        margin-top: 4.5mm;
+      }
+
+      .entry-head {
+        display: flex;
+        gap: 4mm;
+        align-items: baseline;
+        justify-content: space-between;
+      }
+
+      h3 {
+        margin: 0;
+        font-size: 10pt;
+        line-height: 1.2;
+      }
+
+      .date {
+        flex: none;
+        color: #687981;
+        font-size: 7.7pt;
+        font-weight: 600;
+      }
+
+      .company {
+        margin: 0.7mm 0 1.5mm;
+        color: #246d59;
+        font-size: 8.2pt;
+        font-weight: 650;
+      }
+
+      ul {
+        margin: 0;
+        padding-left: 4.2mm;
+      }
+
+      li {
+        margin: 1mm 0;
+        color: #354b54;
+        font-size: 8.3pt;
+        line-height: 1.42;
+      }
+
+      .project {
+        padding: 2.5mm 0;
+      }
+
+      .project + .project {
+        border-top: 1px solid #e2eae7;
+      }
+
+      .project p {
+        margin: 1mm 0 0;
+        color: #465a62;
+        font-size: 8.1pt;
+        line-height: 1.42;
+      }
+
+      .project a,
+      .side a {
+        color: #246d59;
+        font-weight: 650;
+      }
+
+      .side section + section {
+        margin-top: 5mm;
+      }
+
+      .skill-group + .skill-group {
+        margin-top: 3mm;
+      }
+
+      .skill-group h3 {
+        margin-bottom: 1mm;
+        font-size: 8.2pt;
+      }
+
+      .skill-group p,
+      .education p,
+      .languages p {
+        margin: 0;
+        color: #4c6068;
+        font-size: 8pt;
+        line-height: 1.45;
+      }
+
+      .education + .education {
+        margin-top: 3.5mm;
+      }
+
+      .education strong {
+        display: block;
+        margin-bottom: 0.8mm;
+        font-size: 8.2pt;
+        line-height: 1.3;
+      }
+
+      .education span {
+        display: block;
+        margin-top: 0.8mm;
+        color: #687981;
+        font-size: 7.4pt;
+      }
+
+      .languages p + p {
+        margin-top: 1.2mm;
+      }
+
+      @media print {
+        body {
+          background: #fff;
+          print-color-adjust: exact;
+          -webkit-print-color-adjust: exact;
+        }
+
+        .page {
+          margin: 0;
+          box-shadow: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <header>
+        <h1>Irvyn Xicale Cabrera</h1>
+        <p class="role">Tech Lead · Desarrollador Full Stack y Móvil</p>
+        <p class="contact">
+          <span>Puebla, México</span>
+          <a href="mailto:irvynxicale@hotmail.com">irvynxicale@hotmail.com</a>
+          <a href="tel:+522226691915">+52 222 669 1915</a>
+          <a href="https://github.com/irvyn2703">github.com/irvyn2703</a>
+          <a href="https://www.linkedin.com/in/irvyn-xicale-cabrera-b627a1300">
+            linkedin.com/in/irvyn-xicale-cabrera
+          </a>
+          <a href="https://irvyn2703.github.io">irvyn2703.github.io</a>
+        </p>
+      </header>
+
+      <section class="summary">
+        <p>
+          Tech Lead y desarrollador Full Stack con experiencia construyendo
+          productos web y móviles, APIs y módulos financieros. Trabajo con
+          React, React Native, Node.js, MongoDB, SQL y AWS. Combino arquitectura
+          mantenible, pruebas automatizadas, revisión de código e IA aplicada al
+          desarrollo para mejorar la calidad de los entregables y reducir
+          tiempos de implementación.
+        </p>
+      </section>
+
+      <div class="layout">
+        <div>
+          <section>
+            <h2>Experiencia</h2>
+
+            <article class="entry">
+              <div class="entry-head">
+                <h3>Tech Lead</h3>
+                <span class="date">Sep. 2025 — actualidad</span>
+              </div>
+              <p class="company">Finloop</p>
+              <ul>
+                <li>
+                  Lidero la evolución Full Stack de una plataforma financiera:
+                  interfaces, APIs y reglas de negocio para pagos,
+                  amortizaciones, moratorios, expedientes y estados de cuenta.
+                </li>
+                <li>
+                  Coordino decisiones técnicas, revisión de código,
+                  refinamiento de requerimientos y entregas del equipo de
+                  desarrollo.
+                </li>
+                <li>
+                  Impulso arquitectura mantenible y pruebas automatizadas, e
+                  integro herramientas de IA para acelerar análisis,
+                  documentación y desarrollo.
+                </li>
+                <li>
+                  Acompaño despliegues y operación en AWS, así como el trabajo
+                  con MongoDB en ambientes de desarrollo y producción.
+                </li>
+              </ul>
+            </article>
+
+            <article class="entry">
+              <div class="entry-head">
+                <h3>Desarrollador Full Stack y Móvil</h3>
+                <span class="date">Mar. 2025 — jul. 2025</span>
+              </div>
+              <p class="company">CP Digital</p>
+              <ul>
+                <li>
+                  Participé en la construcción desde cero de las primeras
+                  versiones de Checkmark, aplicación publicada en Google Play y
+                  App Store para la operación de vehículos seminuevos.
+                </li>
+                <li>
+                  Desarrollé interfaces en React Native, definí arquitectura con
+                  principios SOLID e implementé y actualicé servicios de backend
+                  y endpoints.
+                </li>
+              </ul>
+            </article>
+
+            <article class="entry">
+              <div class="entry-head">
+                <h3>Practicante Frontend</h3>
+                <span class="date">Ago. 2024 — feb. 2025</span>
+              </div>
+              <p class="company">Finloop</p>
+              <ul>
+                <li>
+                  Construí y optimicé interfaces responsivas con React y React
+                  Admin, componentes reutilizables e integraciones con APIs.
+                </li>
+                <li>
+                  Implementé lógica de negocio y colaboré en levantamiento de
+                  requerimientos, control de versiones con Git y trabajo ágil.
+                </li>
+              </ul>
+            </article>
+          </section>
+
+          <section>
+            <h2>Proyectos seleccionados</h2>
+            <article class="project">
+              <h3>
+                Hoylog ·
+                <a href="https://irvyn2703.github.io/hoylog/">Ver producto</a>
+              </h3>
+              <p>
+                Producto propio para registrar avances y notas. React, Supabase,
+                autenticación con Google, GitHub Actions y servidor MCP
+                distribuido mediante npm para usarlo desde Cursor o Claude.
+              </p>
+            </article>
+            <article class="project">
+              <h3>Asistente en WhatsApp · Primer lugar</h3>
+              <p>
+                Chatbot para gestionar notas, eventos y tareas en Notion desde
+                WhatsApp. Prototipo funcional ganador del Lobo Hackathon.
+              </p>
+            </article>
+          </section>
+        </div>
+
+        <aside class="side">
+          <section>
+            <h2>Habilidades</h2>
+            <div class="skill-group">
+              <h3>Frontend y móvil</h3>
+              <p>React, React Native, React Admin, JavaScript, HTML y CSS.</p>
+            </div>
+            <div class="skill-group">
+              <h3>Backend</h3>
+              <p>Node.js, APIs REST, Java, Spring Boot y PHP.</p>
+            </div>
+            <div class="skill-group">
+              <h3>Datos</h3>
+              <p>MongoDB, PostgreSQL, SQL, Supabase y SQLite.</p>
+            </div>
+            <div class="skill-group">
+              <h3>Cloud y herramientas</h3>
+              <p>
+                AWS, Git, GitHub Actions, pruebas automatizadas, MCP e IA
+                aplicada al desarrollo.
+              </p>
+            </div>
+          </section>
+
+          <section>
+            <h2>Formación</h2>
+            <div class="education">
+              <strong>Ingeniería en Ciencias de la Computación</strong>
+              <p>Benemérita Universidad Autónoma de Puebla</p>
+              <span>2019 — 2025</span>
+            </div>
+            <div class="education">
+              <strong>Técnico en Programación</strong>
+              <p>CETis No. 67</p>
+              <span>2015 — 2018</span>
+            </div>
+          </section>
+
+          <section class="languages">
+            <h2>Idiomas</h2>
+            <p><strong>Español:</strong> nativo</p>
+            <p><strong>Inglés:</strong> intermedio</p>
+          </section>
+
+          <section>
+            <h2>Enlaces</h2>
+            <div class="skill-group">
+              <p>
+                <a href="https://github.com/irvyn2703/hoylog">
+                  Repositorio de Hoylog
+                </a>
+              </p>
+              <p>
+                <a href="https://github.com/irvyn2703/chatBotWhatsapp">
+                  Asistente en WhatsApp
+                </a>
+              </p>
+              <p>
+                <a
+                  href="https://play.google.com/store/apps/details?id=mx.checkmark.appcheckmark"
+                >
+                  Checkmark en Google Play
+                </a>
+              </p>
+            </div>
+          </section>
+        </aside>
+      </div>
+    </main>
+  </body>
+</html>
