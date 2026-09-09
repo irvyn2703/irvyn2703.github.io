@@ -10,14 +10,14 @@ function seededRandom(seed = 2703) {
 }
 
 export async function createWorld(canvas, { reducedMotion }) {
-  if (!canvas) return;
+  if (!canvas) return false;
 
   let THREE;
   try {
     THREE = await import(THREE_URL);
   } catch (error) {
     console.warn("El paisaje 3D no pudo cargarse.", error);
-    return;
+    return false;
   }
 
   let renderer;
@@ -25,22 +25,25 @@ export async function createWorld(canvas, { reducedMotion }) {
     renderer = new THREE.WebGLRenderer({
       canvas,
       alpha: true,
-      antialias: window.devicePixelRatio < 2,
+      antialias: false,
       powerPreference: "high-performance",
+      stencil: false,
+      depth: true,
     });
   } catch (error) {
     console.warn("WebGL no está disponible.", error);
-    return;
+    return false;
   }
 
   const random = seededRandom();
   const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(38, 1, 0.1, 100);
+  const camera = new THREE.PerspectiveCamera(38, 1, 0.1, 80);
   const world = new THREE.Group();
   const mountains = new THREE.Group();
   const trees = new THREE.Group();
   const contourRings = new THREE.Group();
   const birds = [];
+  const dummy = new THREE.Object3D();
 
   scene.fog = new THREE.FogExp2(0x071820, 0.027);
   camera.position.set(0, 5.4, 22);
@@ -64,10 +67,8 @@ export async function createWorld(canvas, { reducedMotion }) {
 
   const ground = new THREE.Mesh(
     new THREE.PlaneGeometry(90, 70, 1, 1),
-    new THREE.MeshStandardMaterial({
+    new THREE.MeshLambertMaterial({
       color: 0x0a252a,
-      roughness: 1,
-      metalness: 0,
     }),
   );
   ground.rotation.x = -Math.PI / 2;
@@ -79,7 +80,7 @@ export async function createWorld(canvas, { reducedMotion }) {
     fog: false,
   });
   const sun = new THREE.Mesh(
-    new THREE.IcosahedronGeometry(3.3, 4),
+    new THREE.IcosahedronGeometry(3.3, 1),
     sunMaterial,
   );
   sun.position.set(9.5, 7.8, -24);
@@ -93,7 +94,7 @@ export async function createWorld(canvas, { reducedMotion }) {
     depthWrite: false,
     fog: false,
   });
-  const halo = new THREE.Mesh(new THREE.RingGeometry(4, 6.6, 64), haloMaterial);
+  const halo = new THREE.Mesh(new THREE.RingGeometry(4, 6.6, 32), haloMaterial);
   halo.position.copy(sun.position);
   world.add(halo);
 
@@ -111,9 +112,8 @@ export async function createWorld(canvas, { reducedMotion }) {
   mountainLayout.forEach(([x, y, z, radius, height], index) => {
     const geometry = new THREE.ConeGeometry(radius, height, 5, 1, false);
     geometry.rotateY((index % 2) * 0.32);
-    const material = new THREE.MeshStandardMaterial({
+    const material = new THREE.MeshLambertMaterial({
       color: mountainPalette[index % mountainPalette.length],
-      roughness: 0.92,
       flatShading: true,
     });
     const mountain = new THREE.Mesh(geometry, material);
@@ -152,7 +152,7 @@ export async function createWorld(canvas, { reducedMotion }) {
 
   contourLayout.forEach(([x, y, z, radius], index) => {
     const ring = new THREE.Mesh(
-      new THREE.TorusGeometry(radius, 0.018, 4, 96),
+      new THREE.TorusGeometry(radius, 0.018, 4, 48),
       contourMaterial,
     );
     ring.position.set(x, y, z);
@@ -162,40 +162,54 @@ export async function createWorld(canvas, { reducedMotion }) {
   });
   world.add(contourRings);
 
+  const treeCount = 28;
   const trunkGeometry = new THREE.CylinderGeometry(0.08, 0.13, 0.8, 5);
   const crownGeometry = new THREE.ConeGeometry(0.7, 2.2, 6);
-  const trunkMaterial = new THREE.MeshStandardMaterial({
+  const trunkMaterial = new THREE.MeshLambertMaterial({
     color: 0x16302b,
-    roughness: 1,
   });
-  const crownMaterials = [
-    new THREE.MeshStandardMaterial({ color: 0x2c7562, flatShading: true }),
-    new THREE.MeshStandardMaterial({ color: 0x38826c, flatShading: true }),
-    new THREE.MeshStandardMaterial({ color: 0x1f6559, flatShading: true }),
-  ];
+  const crownMaterial = new THREE.MeshLambertMaterial({
+    flatShading: true,
+  });
+  const trunkMesh = new THREE.InstancedMesh(
+    trunkGeometry,
+    trunkMaterial,
+    treeCount,
+  );
+  const crownMesh = new THREE.InstancedMesh(
+    crownGeometry,
+    crownMaterial,
+    treeCount,
+  );
+  const crownColors = [0x2c7562, 0x38826c, 0x1f6559];
+  const color = new THREE.Color();
 
-  for (let index = 0; index < 38; index += 1) {
-    const tree = new THREE.Group();
+  for (let index = 0; index < treeCount; index += 1) {
     const scale = 0.55 + random() * 1.1;
-    const trunk = new THREE.Mesh(trunkGeometry, trunkMaterial);
-    const crown = new THREE.Mesh(
-      crownGeometry,
-      crownMaterials[index % crownMaterials.length],
-    );
-
-    trunk.position.y = 0.4;
-    crown.position.y = 1.65;
-    tree.add(trunk, crown);
-    tree.scale.setScalar(scale);
-
     const side = random() > 0.5 ? 1 : -1;
-    tree.position.set(side * (5 + random() * 18), -5, -5 - random() * 23);
-    tree.rotation.y = random() * Math.PI;
-    trees.add(tree);
+    const x = side * (5 + random() * 18);
+    const z = -5 - random() * 23;
+    const rotationY = random() * Math.PI;
+
+    dummy.position.set(x, -5 + 0.4 * scale, z);
+    dummy.rotation.set(0, rotationY, 0);
+    dummy.scale.setScalar(scale);
+    dummy.updateMatrix();
+    trunkMesh.setMatrixAt(index, dummy.matrix);
+
+    dummy.position.set(x, -5 + 1.65 * scale, z);
+    dummy.updateMatrix();
+    crownMesh.setMatrixAt(index, dummy.matrix);
+    crownMesh.setColorAt(index, color.setHex(crownColors[index % 3]));
   }
+
+  trunkMesh.instanceMatrix.needsUpdate = true;
+  crownMesh.instanceMatrix.needsUpdate = true;
+  if (crownMesh.instanceColor) crownMesh.instanceColor.needsUpdate = true;
+  trees.add(trunkMesh, crownMesh);
   world.add(trees);
 
-  const starCount = 280;
+  const starCount = 160;
   const starPositions = new Float32Array(starCount * 3);
   for (let index = 0; index < starCount; index += 1) {
     starPositions[index * 3] = (random() - 0.5) * 65;
@@ -264,6 +278,8 @@ export async function createWorld(canvas, { reducedMotion }) {
   let scrollCurrent = 0;
   let running = true;
   let frameId;
+  let lastFrame = 0;
+  const minFrameMs = 1000 / 45;
 
   function onPointerMove(event) {
     pointerTarget.x = (event.clientX / window.innerWidth - 0.5) * 2;
@@ -284,15 +300,17 @@ export async function createWorld(canvas, { reducedMotion }) {
     camera.aspect = width / height;
     camera.fov = width < 720 ? 48 : 38;
     camera.updateProjectionMatrix();
-    renderer.setPixelRatio(
-      Math.min(window.devicePixelRatio, width < 720 ? 1.4 : 1.8),
-    );
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.35));
     renderer.setSize(width, height, false);
     renderer.render(scene, camera);
   }
 
   function render(time = 0) {
     if (!running) return;
+
+    frameId = requestAnimationFrame(render);
+    if (time - lastFrame < minFrameMs) return;
+    lastFrame = time;
 
     const seconds = time * 0.001;
     pointer.lerp(pointerTarget, 0.035);
@@ -364,13 +382,13 @@ export async function createWorld(canvas, { reducedMotion }) {
     });
 
     renderer.render(scene, camera);
-    frameId = requestAnimationFrame(render);
   }
 
   function handleVisibility() {
     running = !document.hidden;
     if (running && !reducedMotion.matches) {
       cancelAnimationFrame(frameId);
+      lastFrame = 0;
       frameId = requestAnimationFrame(render);
     }
   }
@@ -387,4 +405,6 @@ export async function createWorld(canvas, { reducedMotion }) {
     document.addEventListener("visibilitychange", handleVisibility);
     frameId = requestAnimationFrame(render);
   }
+
+  return true;
 }

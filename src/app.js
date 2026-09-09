@@ -1,5 +1,3 @@
-import { createWorld } from "./scene.js";
-
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const header = document.querySelector("[data-header]");
 const menuButton = document.querySelector(".menu-toggle");
@@ -119,8 +117,7 @@ function scrollToProject(index) {
   const normalized = (index + projects.length) % projects.length;
   const project = projects[normalized];
   const left =
-    project.offsetLeft -
-    (projectTrack.clientWidth - project.clientWidth) / 2;
+    project.offsetLeft - (projectTrack.clientWidth - project.clientWidth) / 2;
 
   projectTrack.scrollTo({
     left,
@@ -142,9 +139,10 @@ projectTrack.addEventListener(
   () => {
     cancelAnimationFrame(projectScrollFrame);
     projectScrollFrame = requestAnimationFrame(() => {
-      currentProject.textContent = String(
-        getClosestProjectIndex() + 1,
-      ).padStart(2, "0");
+      currentProject.textContent = String(getClosestProjectIndex() + 1).padStart(
+        2,
+        "0",
+      );
     });
   },
   { passive: true },
@@ -158,4 +156,38 @@ projectTrack.addEventListener("keydown", (event) => {
   );
 });
 
-createWorld(document.querySelector("#world"), { reducedMotion });
+function canUseWorld() {
+  if (reducedMotion.matches) return false;
+  if (navigator.connection?.saveData) return false;
+
+  const network = navigator.connection?.effectiveType;
+  if (network === "slow-2g" || network === "2g") return false;
+
+  const desktopPointer = window.matchMedia(
+    "(hover: hover) and (pointer: fine)",
+  ).matches;
+  if (!desktopPointer) return false;
+
+  if (window.innerWidth < 720) return false;
+
+  return true;
+}
+
+function bootWorld() {
+  if (!canUseWorld()) return;
+
+  import("./scene.js")
+    .then(({ createWorld }) =>
+      createWorld(document.querySelector("#world"), { reducedMotion }),
+    )
+    .then((created) => {
+      if (created) document.body.classList.remove("lite-scene");
+    })
+    .catch(() => {});
+}
+
+if ("requestIdleCallback" in window) {
+  requestIdleCallback(bootWorld, { timeout: 1200 });
+} else {
+  setTimeout(bootWorld, 1);
+}
